@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin"
+        android:elevation="1dp"
+        android:background="#FFFF">
+
+
+        <EditText
+            android:id="@+id/etArraySize"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:ems="10"
+            android:hint="Enter the size of Array"
+            android:inputType="number" />
+
+        <TextView
+            android:id="@+id/tvChooseC"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/etArraySize"
+            android:layout_marginTop="16dp"
+            android:gravity="left"
+            android:text="Choose Complexity"
+            android:textColor="@android:color/black"
+            android:textSize="18sp" />
+
+        <RadioGroup
+            android:id="@+id/rgComplexity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvChooseC"
+            android:gravity="left">
+
+            <RadioButton
+                android:id="@+id/rBtnBest"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="Best Case" />
+
+            <RadioButton
+                android:id="@+id/rBtnAvg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="Average Case" />
+
+            <RadioButton
+                android:id="@+id/rBtnWorst"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Worst Case" />
+
+        </RadioGroup>
+
+        <Button
+            android:id="@+id/btnGenerateArr"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/rgComplexity"
+            android:layout_marginTop="10dp"
+            android:text="Generate Array"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:background="#EEEEEE" />
+
+        <TextView
+            android:id="@+id/tvArrGenResult"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/btnGenerateArr"
+            android:layout_margin="20dp"
+            android:text="" />
+
+        <GridLayout
+            android:id="@+id/gvSort"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/tvArrGenResult"
+            android:gravity="center"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_column="0"
+                android:layout_row="0"
+                android:gravity="center"
+                android:padding="5dp"
+                android:text="Select Sorting"
+                android:textColor="@android:color/black"
+                android:textSize="16sp" />
+
+            <Button
+                android:onClick="bubSorting"
+                android:id="@+id/btnBubble"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_column="0"
+                android:layout_row="1"
+                android:text="Bubble Sort" />
+
+            <Button
+                android:onClick="selSorting"
+                android:id="@+id/btnSelection"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_column="0"
+                android:layout_row="2"
+                android:text="Selection Sort" />
+
+            <Button
+                android:onClick="merSorting"
+                android:id="@+id/btnMerge"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_column="0"
+                android:layout_row="3"
+                android:text="Merge Sort" />
+
+            <Button
+                android:onClick="qukSorting"
+                android:id="@+id/btnQuick"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_column="0"
+                android:layout_row="4"
+                android:text="Quick Sort" />
+
+            <Button
+                android:onClick="insSorting"
+                android:id="@+id/btnInsertion"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_column="0"
+                android:layout_row="5"
+                android:text="Insertion Sort" />
+
+            <Button
+                android:onClick="heapSorting"
+                android:id="@+id/btnHeap"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_column="0"
+                android:layout_row="6"
+                android:text="Heap Sort" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="1"
+                android:layout_gravity="center"
+                android:layout_row="0"
+                android:padding="5dp"
+                android:text="Time Taken in MS"
+                android:textColor="@android:color/black"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/tvBsortMs"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="1"
+                android:layout_gravity="center"
+                android:layout_row="1"
+                android:hint="BS"
+                android:textColor="@android:color/black"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/tvSsortMs"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="1"
+                android:layout_gravity="center"
+                android:layout_row="2"
+                android:hint="SS"
+                android:textColor="@android:color/black"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/tvMsortMs"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="1"
+                android:layout_gravity="center"
+                android:layout_row="3"
+                android:hint="MS"
+                android:textColor="@android:color/black"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/tvQsortMs"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="1"
+                android:layout_gravity="center"
+                android:layout_row="4"
+                android:hint="QS"
+                android:textColor="@android:color/black"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/tvIsortMs"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="1"
+                android:layout_gravity="center"
+                android:layout_row="5"
+                android:hint="IS"
+                android:textColor="@android:color/black"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/tvHsortMs"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="1"
+                android:layout_gravity="center"
+                android:layout_row="6"
+                android:hint="HS"
+                android:textColor="@android:color/black"
+                android:textSize="16sp" />
+
+
+        </GridLayout>
+
+        <Button
+            android:onClick="benchMarkAll"
+            android:id="@+id/btnBenchMarkAll"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/gvSort"
+            android:text="Benchmark All"
+            android:visibility="gone"/>
+
+    </RelativeLayout>
+
+</ScrollView>
+
